@@ -18,7 +18,7 @@ const methods = {
   similar: require('./lib/similar'),
   permissions: require('./lib/permissions'),
   categories: require('./lib/categories'),
-  featuredApps: require('./lib/featuredApps')
+  featuredCategories: require('./lib/featuredCategories')
 };
 
 function memoized(opts) {
@@ -46,7 +46,7 @@ function memoized(opts) {
     similar: require('./lib/similar'),
     permissions: require('./lib/permissions'),
     categories: require('./lib/categories'),
-    featuredApps: require('./lib/featuredApps')
+    featuredCategories: require('./lib/featuredCategories')
   };
 
   return Object.assign(
@@ -57,30 +57,3 @@ function memoized(opts) {
 }
 
 module.exports = Object.assign({ memoized }, constants, methods);
-
-//const store = Object.assign({ memoized }, constants, methods);
-
-// const init = async () => {
-//   const opts = { 
-//     category: 'EDUCATION',
-//     collection: 'topselling_free',
-//     cache: false,
-//     fresh: false,
-//     num: 500,
-//     country: 'br',
-//     lang: 'pt-BR' 
-//   };
-
-//   const categories = await store.list(opts);
-
-//   const featuredCategories = await store.featuredApps({
-//     num: 500,
-//     country: 'br',
-//     lang: 'pt-BR' 
-//   });
-
-//   console.log(categories);
-//   console.log(featuredCategories);
-// };
-
-// init();
