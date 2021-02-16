@@ -4,6 +4,8 @@ const gplay = require('../index');
 const assertValidApp = require('./common').assertValidApp;
 const assert = require('chai').assert;
 
+const timeout = 300 * 1000;
+
 describe('Search method', () => {
   it('should fetch a valid application list', () => {
     return gplay.search({ term: 'Panda vs Zombies' })
@@ -30,7 +32,7 @@ describe('Search method', () => {
 
   it('should search for pre register with fullDetail', () =>
     gplay.search({ term: 'preregister', num: 10, fullDetail: true })
-      .then((apps) => apps.map(assertValidApp))).timeout(5 * 1000);
+      .then((apps) => apps.map(assertValidApp))).timeout(timeout);
 
   it('should fetch multiple pages of distinct results', () =>
     gplay.search({ term: 'panda', num: 55 })

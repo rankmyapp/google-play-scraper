@@ -6,6 +6,8 @@ const assertValidApp = require('./common').assertValidApp;
 const validator = require('validator');
 const assertValidUrl = require('./common').assertValidUrl;
 
+const timeout = 30 * 1000;
+
 describe('Developer method', () => {
   it('should fetch a valid application list for the given developer with string id', () => {
     return gplay.developer({ devId: 'Jam City, Inc.' })
@@ -27,11 +29,10 @@ describe('Developer method', () => {
   });
 
   it('should fetch a valid application list with full detail', () => {
-    return gplay.developer({ devId: '5700313618786177705', num: 10, fullDetail: true })
+    return gplay.developer({ devId: '5700313618786177705', num: 1, fullDetail: true })
       .then((apps) => {
         apps.forEach((app) => {
           assert.isNumber(app.minInstalls);
-          assert.isNumber(app.reviews);
 
           assert.isString(app.description);
           assert.isString(app.descriptionHTML);
@@ -61,5 +62,5 @@ describe('Developer method', () => {
           app.comments.map(assert.isString);
         });
       });
-  }).timeout(15 * 1000);
+  }).timeout(timeout);
 });
