@@ -21,7 +21,7 @@ const methods = {
   featuredCategories: require('./lib/featuredCategories')
 };
 
-function memoized(opts) {
+function memoized (opts) {
   const cacheOpts = Object.assign(
     {
       primitive: true,

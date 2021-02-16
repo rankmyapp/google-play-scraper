@@ -1,5 +1,6 @@
 'use strict';
 
+const R = require('ramda');
 const assert = require('chai').assert;
 const assertValidApp = require('./common').assertValidApp;
 const validator = require('validator');
@@ -7,7 +8,7 @@ const assertValidUrl = require('./common').assertValidUrl;
 const gplay = require('../index');
 
 describe('List method', () => {
-  const timeout = 20 * 1000;
+  const timeout = 30 * 1000;
 
   it('should throw and error if the given collection does not exist', () => {
     const collection = gplay.collection.TRENDING;
@@ -101,7 +102,7 @@ describe('List method', () => {
   it('should fetch a valid application list for the new paid collection and FAMILY category', () => {
     return gplay.list({
       collection: gplay.collection.NEW_PAID,
-      category: gplay.category.FAMILY,
+      category: gplay.category.GAME,
       num: 100
     })
       .then((apps) => apps.map(assertValidApp))
@@ -192,23 +193,23 @@ describe('List method', () => {
     gplay.list({
       category: gplay.category.GAME_ACTION,
       collection: gplay.collection.TOP_FREE,
-      num: 10,
+      num: 1,
       fullDetail: true
     })
       .then((apps) => apps.map(assertValidApp))
   ).timeout(timeout);
 
   it('should be able to retreive a list for each category', () => {
-    const categoryIds = Object.keys(gplay.category);
+    const categoryIds = R.take(5, Object.keys(gplay.category));
 
     const fetchCategory = (category) => gplay.list({
       category,
       collection: gplay.collection.TOP_FREE,
-      num: 10
+      num: 1
     }).catch(() => {
       assert.equal(category, void 0, 'invalid category');
     });
 
     return Promise.all(categoryIds.map(fetchCategory));
-  }).timeout(200 * 1000);
+  }).timeout(timeout);
 });

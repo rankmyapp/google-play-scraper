@@ -8,12 +8,12 @@ describe('Featured Categories & Apps', () => {
   const assertFeaturedCategory = (category) => {
     assert.isString(category.title);
     assert.isString(category.link);
-    if(category.subTitle) assert.isString(category.subTitle);
+    if (category.subTitle) assert.isString(category.subTitle);
   };
 
   let featuredCategories = [];
 
-  it('should return a list of featured categories', async () => {    
+  it('should return a list of featured categories', async () => {
     const opts = {
       country: 'br',
       lang: 'pt-BR',
@@ -23,7 +23,7 @@ describe('Featured Categories & Apps', () => {
     featuredCategories.map(assertFeaturedCategory);
   });
 
-  it('should return a list of featured apps by a featured category', async () => {    
+  it('should return a list of featured apps by a featured category', async () => {
     const { link } = featuredCategories[0];
     const opts = {
       country: 'br',
@@ -34,5 +34,4 @@ describe('Featured Categories & Apps', () => {
     const response = await gplay.list(opts);
     response.map(assertValidApp);
   });
-
 });
