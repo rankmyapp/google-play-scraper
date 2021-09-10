@@ -311,6 +311,22 @@ export interface IFnMemoized {
   (options?: any): IMemoizedResult
 }
 
+export interface FeaturedCategory {
+  title: string
+  subTitle: string
+  link: string
+}
+
+export interface IFnFeaturedCategoriesOptions {
+  country?: string
+  lang?: string
+  num?: number
+}
+
+export interface IFnFeaturedCategories {
+  (options?: IFnFeaturedCategoriesOptions): Promise<FeaturedCategory[]>
+}
+
 export const app: IFnApp
 export const list: IFnList
 export const search: IFnSearch
@@ -321,3 +337,4 @@ export const similar: IFnSimilar
 export const permissions: IFnPermissions
 export const categories: IFnCategories
 export const memoized: IFnMemoized
+export const featuredCategories: IFnFeaturedCategories
