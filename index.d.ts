@@ -199,6 +199,7 @@ export interface IFnListOptions extends IOptions {
   lang?: string
   country?: string
   fullDetail?: boolean
+  clusterUrl?: string
 }
 
 export interface IFnList {
