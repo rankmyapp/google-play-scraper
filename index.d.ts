@@ -34,6 +34,7 @@ export enum category {
   TOOLS = 'TOOLS',
   TRAVEL_AND_LOCAL = 'TRAVEL_AND_LOCAL',
   VIDEO_PLAYERS = 'VIDEO_PLAYERS',
+  WATCH_FACE = 'WATCH_FACE',
   WEATHER = 'WEATHER',
   GAME = 'GAME',
   GAME_ACTION = 'GAME_ACTION',
@@ -119,13 +120,15 @@ export interface IAppItemFullDetail extends IAppItem {
   free: boolean
   currency: string
   priceText: string
-  offersIAP: boolean
+  available: boolean,
+  offersIAP: boolean,
   IAPRange: string
   size: string
   androidVersion: string
   androidVersionText: string
   developer: string
   developerId: string
+  developerInternalID: string
   developerEmail: string
   developerWebsite: string
   developerAddress: string
@@ -226,7 +229,7 @@ export interface IFnDeveloperOptions extends IOptions {
   lang?: string
   country?: string
   num?: number
-  fullDetail?: false
+  fullDetail?: boolean
 }
 
 export interface IFnDeveloper {
