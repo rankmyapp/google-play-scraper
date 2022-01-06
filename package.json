@@ -1,6 +1,6 @@
 {
   "name": "google-play-scraper",
-  "version": "8.0.3",
+  "version": "8.0.4",
   "description": "scrapes app data from google play store",
   "main": "index.js",
   "scripts": {
@@ -29,7 +29,8 @@
     "memoizee": "^0.4.15",
     "ramda": "^0.27.1",
     "request": "^2.88.2",
-    "throttled-request": "^0.1.1"
+    "throttled-request": "^0.1.1",
+    "got": "^11.8.3"
   },
   "devDependencies": {
     "chai": "^4.3.4",
