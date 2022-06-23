@@ -3,13 +3,15 @@
 const R = require('ramda');
 const constants = require('./lib/constants');
 const memoizee = require('memoizee');
-
+const getParseList = require('./lib/utils/parseList');
 const appMethod = require('./lib/app');
+
+const parseList = R.partial(getParseList, [appMethod]);
 
 const methods = {
   app: appMethod,
   list: require('./lib/list'),
-  search: R.partial(require('./lib/search'), [appMethod]),
+  search: R.partial(require('./lib/search'), [parseList, appMethod]),
   suggest: require('./lib/suggest'),
   developer: require('./lib/developer'),
   reviews: require('./lib/reviews'),
@@ -36,7 +38,7 @@ function memoized (opts) {
 
   const otherMethods = {
     list: require('./lib/list'),
-    search: R.partial(require('./lib/search'), [mAppMethod]),
+    search: R.partial(require('./lib/search'), [parseList, appMethod]),
     suggest: require('./lib/suggest'),
     developer: require('./lib/developer'),
     reviews: require('./lib/reviews'),
