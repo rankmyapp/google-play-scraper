@@ -4,27 +4,27 @@ const { assert } = require('chai');
 const gplay = require('../index');
 const { assertValidApp } = require('./common');
 
-describe('Featured Categories & Apps', () => {
+describe('Home Categories & Apps', () => {
   const assertFeaturedCategory = (category) => {
     assert.isString(category.title);
     assert.isString(category.link);
     if (category.subTitle) assert.isString(category.subTitle);
   };
 
-  let featuredCategories = [];
+  let homeCategories = [];
 
-  it('should return a list of featured categories', async () => {
+  it('should return a list of home categories', async () => {
     const opts = {
       country: 'br',
       lang: 'pt-BR',
       num: 100
     };
-    featuredCategories = await gplay.featuredCategories(opts);
-    featuredCategories.map(assertFeaturedCategory);
+    homeCategories = await gplay.homeCategories(opts);
+    homeCategories.map(assertFeaturedCategory);
   });
 
-  it('should return a list of featured apps by a featured category', async () => {
-    const { link } = featuredCategories[0];
+  it('should return a list of apps by a home category', async () => {
+    const { link } = homeCategories[0];
     const opts = {
       country: 'br',
       lang: 'pt-BR',
