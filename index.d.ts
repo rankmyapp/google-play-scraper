@@ -318,20 +318,19 @@ export interface IFnMemoized {
   (options?: any): IMemoizedResult
 }
 
-export interface FeaturedCategory {
+export interface HomeCategory {
   title: string
   subTitle: string
   link: string
 }
 
-export interface IFnFeaturedCategoriesOptions {
+export interface IFnHomeCategoriesOptions {
   country?: string
   lang?: string
-  num?: number
 }
 
-export interface IFnFeaturedCategories {
-  (options?: IFnFeaturedCategoriesOptions): Promise<FeaturedCategory[]>
+export interface IFnHomeCategories {
+  (options?: IFnHomeCategoriesOptions): Promise<HomeCategory[]>
 }
 
 export const app: IFnApp
@@ -344,4 +343,4 @@ export const similar: IFnSimilar
 export const permissions: IFnPermissions
 export const categories: IFnCategories
 export const memoized: IFnMemoized
-export const featuredCategories: IFnFeaturedCategories
+export const homeCategories: IFnHomeCategories
