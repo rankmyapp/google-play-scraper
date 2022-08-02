@@ -18,7 +18,7 @@ const methods = {
   similar: require('./lib/similar'),
   permissions: require('./lib/permissions'),
   categories: require('./lib/categories'),
-  featuredCategories: require('./lib/featuredCategories')
+  homeCategories: require('./lib/homeCategories')
 };
 
 function memoized (opts) {
@@ -45,7 +45,7 @@ function memoized (opts) {
     similar: require('./lib/similar'),
     permissions: require('./lib/permissions'),
     categories: require('./lib/categories'),
-    featuredCategories: require('./lib/featuredCategories')
+    homeCategories: require('./lib/homeCategories')
   };
 
   return Object.assign(
