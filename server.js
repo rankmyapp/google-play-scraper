@@ -6,6 +6,7 @@ const router = require('./lib');
 const app = Express();
 const port = process.env.PORT || 3000;
 
+app.use(Express.json());
 app.use('/api/', router);
 
 app.listen(port, function() {

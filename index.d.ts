@@ -333,6 +333,20 @@ export interface IFnHomeCategories {
   (options?: IFnHomeCategoriesOptions): Promise<HomeCategory[]>
 }
 
+export interface IFnLiveOpsOptions {
+  lang?: string;
+  appId: string;
+  auth: {
+    email?: string;
+    deviceId: string;
+    token: string;
+  }
+}
+
+export interface IFnLiveOps {
+  (options?: IFnLiveOpsOptions): Promise<any[]>
+}
+
 export const app: IFnApp
 export const list: IFnList
 export const search: IFnSearch
@@ -344,3 +358,4 @@ export const permissions: IFnPermissions
 export const categories: IFnCategories
 export const memoized: IFnMemoized
 export const homeCategories: IFnHomeCategories
+export const liveOps: IFnLiveOps

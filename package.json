@@ -24,10 +24,12 @@
   },
   "homepage": "https://github.com/facundoolano/google-play-scraper",
   "dependencies": {
+    "axios": "^1.6.5",
     "cheerio": "^1.0.0-rc.10",
     "debug": "^2.2.0",
     "got": "^11.8.3",
     "memoizee": "^0.4.11",
+    "protobufjs": "^7.2.6",
     "ramda": "^0.21.0",
     "request": "^2.88.2",
     "throttled-request": "^0.1.1"
@@ -41,12 +43,13 @@
     "eslint-plugin-node": "^9.0.1",
     "eslint-plugin-promise": "^4.1.1",
     "eslint-plugin-standard": "^4.0.0",
-    "mocha": "^9.1.4",
-    "promise-log": "^0.1.0",
-    "validator": "^13.7.0",
     "express": "^4.17.1",
     "husky": "^4.3.8",
-    "nodemon": "^2.0.12"
+    "mocha": "^9.1.4",
+    "nock": "^13.5.0",
+    "nodemon": "^2.0.12",
+    "promise-log": "^0.1.0",
+    "validator": "^13.7.0"
   },
   "husky": {
     "hooks": {
