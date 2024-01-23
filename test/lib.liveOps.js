@@ -21,8 +21,8 @@ describe('Live Ops Data', () => {
       appId: "com.nianticlabs.pokemongo",
       lang: "es-MX",
       auth: {
-        token: "ya29.a0AfB_byBEKO4UbO9EnkONktsnPV3TJpv0OvRyHfSRC3pKEr58xTYfH5KRbvgLlljAoR-nLSnAFXNSMGX0Gz7tVuqk5zRHimsG9BOTr16UpjslbSP9iHWu8ldVQ-5OEmtv7QQJqJQGkWUcO3VXpLLZYmhd3SlXk65oPUp0GbKUVMeyToZsiJkaWU_GpGu9puqw6PiFkqcjF1-J3sCC7cmqfZdc1jtfMRigNhWN77MrfV0TIYoFlzuaIeQDWhgR3DiRjE0l1VybNwe6H8KJVA_yoSDwwRkg6p3STHv1sfM8U20iieFMzPDlQh7oqpqx-Utm72j9GgaCgYKAYcSAQ8SFQHGX2Mic4GR9jmKUXbqi4-GKGfsyw0333",
-        deviceId: "32C428D6BE1DB6A2"
+        token: "ya29.token",
+        deviceId: "12391231293812931"
       }
     };
     nock(`https://play-fe.googleapis.com`)
