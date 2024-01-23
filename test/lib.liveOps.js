@@ -6,15 +6,19 @@ const gplay = require('../index');
 
 describe('Live Ops Data', () => {
 
-  const assertLiveOps = (category) => {
-    assert.isString(category.appId);
-    assert.isString(category.lang);
+  const assertLiveOpsEvents = (category) => {
     assert.isString(category.title);
     assert.isString(category.description);
     assert.isString(category.image);
     expect(category.start).to.be.an('date');
     expect(category.end).to.be.an('date');
   };
+
+  const assertLiveOpsResult = (result) => {
+    assert.isString(result.appId);
+    assert.isString(result.lang);
+    result.events.map(assertLiveOpsEvents);
+  }
 
   it('should return a list of live ops events data', async () => {
     const opts = {
@@ -33,6 +37,6 @@ describe('Live Ops Data', () => {
       });
 
     const liveOpsData = await gplay.liveOps(opts);
-    liveOpsData.map(assertLiveOps);
+    assertLiveOpsResult(liveOpsData);
   });
 });

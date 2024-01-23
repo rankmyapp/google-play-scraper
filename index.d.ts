@@ -324,6 +324,18 @@ export interface HomeCategory {
   link: string
 }
 
+export interface ILiveOps {
+  lang: string;
+  appId: string;
+  events: Array<{
+    title: string;
+    description: string;
+    image: string;
+    start: Date;
+    end: Date;
+  }>
+}
+
 export interface IFnHomeCategoriesOptions {
   country?: string
   lang?: string
@@ -344,7 +356,7 @@ export interface IFnLiveOpsOptions {
 }
 
 export interface IFnLiveOps {
-  (options?: IFnLiveOpsOptions): Promise<any[]>
+  (options?: IFnLiveOpsOptions): Promise<ILiveOps>
 }
 
 export const app: IFnApp
