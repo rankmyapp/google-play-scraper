@@ -328,8 +328,10 @@ export interface ILiveOps {
   lang: string;
   appId: string;
   events: Array<{
+    eventId: string;
     title: string;
     description: string;
+    kind: string;
     image: string;
     start: Date;
     end: Date;
